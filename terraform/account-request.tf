@@ -1,23 +1,23 @@
 # Copyright Amazon.com, Inc. or its affiliates. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
-module "development_account" {
+module "staging_account" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail = "development@ghettolabs.io"
-    AccountName  = "Development"
+    AccountEmail = "staging@ghettolabs.io"
+    AccountName  = "Staging"
     # Syntax for top-level OU
     # ManagedOrganizationalUnit = "AFT-Management-OU"
     # Syntax for nested OU
-    ManagedOrganizationalUnit = "AFT-Management-OU (ou-naop-6yxklipy)"
-    SSOUserEmail     = "development@ghettolabs.io"
-    SSOUserFirstName = "development"
+    ManagedOrganizationalUnit = "AFT-Management-OU (ou-mvw8-7azv2nsm)"
+    SSOUserEmail     = "staging@ghettolabs.io"
+    SSOUserFirstName = "staging"
     SSOUserLastName  = "account"
   }
 
   account_tags = {
-    "ABC:Owner"       = "development@ghettolabs.io"
+    "ABC:Owner"       = "staging@ghettolabs.io"
     "ABC:Division"    = "ENT"
     "ABC:Environment" = "Dev"
     "ABC:CostCenter"  = "123456"
@@ -29,7 +29,7 @@ module "development_account" {
 
   change_management_parameters = {
     change_requested_by = "James Knott"
-    change_reason       = "Adding Development Account to Control Tower"
+    change_reason       = "Adding Staging Account to Control Tower"
   }
 
   custom_fields = {
