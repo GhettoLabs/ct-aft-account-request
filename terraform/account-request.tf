@@ -79,23 +79,23 @@ module "test_account" {
   account_customizations_name = "ghettolabs-customizations"
 }
   
-module "development_account" {
+module "dev_account" {
   source = "./modules/aft-account-request"
   
   control_tower_parameters = {
-    AccountEmail = "dev@ghettolabs.io"
+    AccountEmail = "devaccount@ghettolabs.io"
     AccountName  = "Development"
     # Syntax for top-level OU
     # ManagedOrganizationalUnit = "AFT-Management-OU"
     # Syntax for nested OU
     ManagedOrganizationalUnit = "AFT-Management-OU (ou-mvw8-7azv2nsm)"
-    SSOUserEmail     = "dev@ghettolabs.io"
-    SSOUserFirstName = "dev"
+    SSOUserEmail     = "devaccount@ghettolabs.io"
+    SSOUserFirstName = "devaccount"
     SSOUserLastName  = "account"
   }
 
   account_tags = {
-    "ABC:Owner"       = "dev@ghettolabs.io"
+    "ABC:Owner"       = "devaccount@ghettolabs.io"
     "ABC:Division"    = "ENT"
     "ABC:Environment" = "Dev"
     "ABC:CostCenter"  = "123456"
